@@ -1,0 +1,12 @@
+.dockerignore
+.git/
+.gitignore
+.python-version
+.venv/
+.vscode/
+Dockerfile
+LICENSE
+README.md
+ruff.toml
+__pycache__/
+*.py[cod]
