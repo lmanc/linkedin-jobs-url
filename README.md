@@ -1,5 +1,7 @@
 # LinkedIn Jobs URL
 
+[![Build and Push Docker Image](https://github.com/lmanc/linkedin-jobs-url/actions/workflows/docker.yaml/badge.svg)](https://github.com/lmanc/linkedin-jobs-url/actions/workflows/docker.yaml)
+
 - [🚀 Quick Start](#-quick-start)
 - [📡 API Usage](#-api-usage)
   - [`POST /build`](#post-build)
