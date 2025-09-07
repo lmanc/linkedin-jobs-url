@@ -27,6 +27,7 @@ ENV PYTHONUNBUFFERED=1 \
 COPY --from=builder /python/ /python/
 COPY --from=builder --chown=app:app /app/.venv/ /app/.venv/
 COPY --from=builder --chown=app:app /app/src/ /app/src/
+COPY --from=builder --chown=app:app --chmod=u+x /app/start.sh /app/start.sh
 USER app
 ENTRYPOINT []
-CMD ["fastapi", "run", "--host", "0.0.0.0", "--port", "8000", "src/api/main.py"]
+CMD ["/app/start.sh"]
