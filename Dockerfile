@@ -24,9 +24,9 @@ WORKDIR /app
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PATH="/app/.venv/bin:$PATH"
-COPY --from=builder /python /python
-COPY --from=builder --chown=app:app /app/.venv /app/.venv
-COPY --from=builder --chown=app:app /app/src /app/src
+COPY --from=builder /python/ /python/
+COPY --from=builder --chown=app:app /app/.venv/ /app/.venv/
+COPY --from=builder --chown=app:app /app/src/ /app/src/
 USER app
 ENTRYPOINT []
 CMD ["fastapi", "run", "--host", "0.0.0.0", "--port", "8000", "src/api/main.py"]
