@@ -22,7 +22,7 @@ async def health() -> dict[str, str]:
 
 @app.post('/build')
 async def build(req: BuildRequest) -> dict[str, str]:
-    """Generate a custom LinkedIn job search URL."""
+    """Generate a custom LinkedIn Jobs search URL."""
     base_url = 'https://www.linkedin.com/jobs/search'
     params = req.model_dump(by_alias=True, exclude_none=True)
     query = urlencode(params, quote_via=quote)
