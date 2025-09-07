@@ -1,10 +1,23 @@
 from urllib.parse import quote, urlencode
 
 from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
 
 from api.models import BuildRequest
 
-app = FastAPI()
+app = FastAPI(title='LinkedIn Jobs URL Backend')
+
+
+@app.get('/', include_in_schema=False)
+def root() -> RedirectResponse:
+    """Redirect to the interactive API documentation."""
+    return RedirectResponse('/docs')
+
+
+@app.get('/health', include_in_schema=False)
+async def health() -> dict[str, str]:
+    """Health check endpoint."""
+    return {'status': 'ok'}
 
 
 @app.post('/build')
