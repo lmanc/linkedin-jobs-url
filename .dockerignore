@@ -1,9 +1,12 @@
 .dockerignore
+.env
 .git/
+.github/
 .gitignore
 .python-version
 .venv/
 .vscode/
+compose.yaml
 Dockerfile
 LICENSE
 README.md
