@@ -11,6 +11,7 @@ concurrency:
 
 jobs:
   build_push_deploy:
+    environment: Production
     runs-on: ubuntu-latest
     permissions:
       contents: read
