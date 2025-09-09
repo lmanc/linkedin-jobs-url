@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1.7
+
 FROM debian:bookworm-slim AS base
 
 FROM base AS builder
@@ -30,7 +32,7 @@ ENV PYTHONUNBUFFERED=1 \
 COPY --from=builder /python/ /python/
 COPY --from=builder --chown=app:app /app/.venv/ /app/.venv/
 COPY --from=builder --chown=app:app /app/src/ /app/src/
-COPY --from=builder --chown=app:app --chmod=u+x /app/start.sh /app/start.sh
+COPY --from=builder --chown=app:app --chmod=0755 /app/start.sh /app/start.sh
 USER app
 ENTRYPOINT []
 CMD ["/app/start.sh"]
