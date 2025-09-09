@@ -18,6 +18,11 @@ COPY . .
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --locked --no-dev
 
+FROM builder AS tester
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --locked && \
+    uv run pytest -q
+
 FROM base
 RUN useradd --uid 10001 --home-dir /app/ app
 WORKDIR /app
