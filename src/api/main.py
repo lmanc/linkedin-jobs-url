@@ -3,7 +3,7 @@ from urllib.parse import quote, urlencode
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 
-from api.models import BuildRequest
+from src.api.models import BuildRequest
 
 app = FastAPI(title='LinkedIn Jobs URL Backend')
 

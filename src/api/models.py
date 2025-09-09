@@ -3,7 +3,7 @@ from typing import Annotated
 
 from pydantic import AliasChoices, BaseModel, Field, PlainSerializer
 
-from api.enums import ExperienceLevel, JobType, SortBy, WorkplaceSetup
+from src.api.enums import ExperienceLevel, JobType, SortBy, WorkplaceSetup
 
 
 def join_list(values: list[int | str | Enum]) -> str | None:
