@@ -1,5 +1,3 @@
-# syntax=docker/dockerfile:1.7
-
 FROM debian:bookworm-slim AS base
 
 FROM base AS builder
